@@ -29,7 +29,7 @@ using namespace std::chrono_literals;
  */
 #define DEFAULT_RADAR_IP "224.0.2.2"
 #define RADAR_INTERFACE "10.13.1.166"
-#define DEFAULT_RADAR_PORT 42102
+#define DEFAULT_RADAR_PORT 42101
 #define DEFAULT_FRAME_ID "ARS_548" 
 #define MSGBUFSIZE 102400
 #define MAX_OBJECTS 50
@@ -687,7 +687,7 @@ class ars548_driver : public rclcpp::Node{
         modifierObject.reserve(SIZE);
         modifierObject.clear();
         //Detection Cloud
-        modifierDetection.setPointCloud2Fields(3,
+        modifierDetection.setPointCloud2Fields(8,
             "x",1,sensor_msgs::msg::PointField::FLOAT32,
             "y",1,sensor_msgs::msg::PointField::FLOAT32,
             "z",1,sensor_msgs::msg::PointField::FLOAT32,
